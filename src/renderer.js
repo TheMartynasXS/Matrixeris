@@ -1,10 +1,11 @@
 const { Matrix4 } = require("three");
 const THREE = require("three");
-Cmin = 20
+
 
 let scene = new THREE.Scene();
-width = 300;
-height = 300;
+width = 270;
+height = 270;
+Cmin = width / 15;
 let camera = new THREE.OrthographicCamera(width / Cmin / - 2, width / Cmin / 2, height / Cmin / 2, height / Cmin / - 2, 1, 1000);
 camera.position.set(1.5, -1.5, 100);
 
@@ -24,7 +25,7 @@ const imgA = MakeTexture("./A.png");
 const imgB = MakeTexture("./B.png");
 
 let matA = new THREE.MeshBasicMaterial({ map: imgA });
-let matB = new THREE.MeshBasicMaterial({ map: imgB, transparent: true});
+let matB = new THREE.MeshBasicMaterial({ map: imgB, transparent: true });
 let matC = new THREE.MeshBasicMaterial({ map: imgB, transparent: true });
 
 let planeA = new THREE.Mesh(geometry, matA);
@@ -59,7 +60,7 @@ scene.background = bg;
 let renderer = new THREE.WebGLRenderer();
 renderer.setSize(width, height);
 
-renderer.domElement.onclick = function () {
+function Randomize() {
   planeA.position.set(RandomInt(-5, -1), RandomInt(1, 5), 0);
   planeA.rotateZ(RandomInt(0, 3) * Math.PI / 2);
 
@@ -112,6 +113,16 @@ e3 = document.getElementById("E3");
 e4 = document.getElementById("E4");
 e5 = document.getElementById("E5");
 e6 = document.getElementById("E6");
+
+function clearall (){
+  inputs = document.getElementsByTagName("input");
+  for(let i = 0; i < inputs.length; i++){
+    if(inputs[i].disabled == false)
+    {
+      inputs[i].value = ""
+    };
+  }
+}
 
 let E = [
   1, 0, 0, 0,
@@ -199,7 +210,7 @@ function render() {
   test()
   setTimeout(() => {
     requestAnimationFrame(render)
-  }, 1000 / 144);;
+  }, 1000 / 60);;
   renderer.render(scene, camera)
 }
 

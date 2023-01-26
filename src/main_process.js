@@ -16,8 +16,8 @@ const createWindow = (htmlDir) => {
   });
 
   mainWindow.loadFile(htmlDir);
-  // mainWindow.webContents.openDevTools({ mode: "detach" })
-  mainWindow.removeMenu();
+  mainWindow.webContents.openDevTools({ mode: "detach" })
+  // mainWindow.removeMenu();
 };
 
 app.whenReady().then(() => {

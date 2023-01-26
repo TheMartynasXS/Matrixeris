@@ -1,7 +1,7 @@
 {
   "name": "matrixeris",
   "productName": "matrixeris",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "matricas daro",
   "main": "src/main_process.js",
   "build": {

@@ -66,13 +66,15 @@ canvas {
 .Matrixes {
   padding-block: 0.5rem;
   display: grid;
-  filter:drop-shadow(0 0 0.15rem var(--shadow));
+  filter: drop-shadow(0 0 0.15rem var(--shadow));
   grid-template-columns: 1fr 0.5rem 1fr 0.5rem 1fr 0.5rem 1fr 0.5rem 1fr;
   place-items: center;
 }
+
 .correct {
   outline: 2px solid var(--accent-success);
 }
+
 .incorrect {
   outline: 2px solid var(--accent-failure);
 }
@@ -80,6 +82,7 @@ canvas {
 .Matrix>input:focus {
   outline: none;
 }
+
 .Matrix>input {
   box-sizing: border-box;
   min-width: 1px;
@@ -89,7 +92,7 @@ canvas {
   color: var(--text-primary);
   background-color: var(--bg-300);
   border-radius: 100%;
-  border:none;
+  border: none;
 }
 
 .simbols {
@@ -104,8 +107,27 @@ canvas {
 .Matrix>input:disabled {
   color: var(--text-secondary);
   background-color: var(--bg-100);
-  border:none;
+  border: none;
 
+}
+
+.Button-Container {
+  display: flex;
+  gap: 0.5rem;
+  grid-template-columns: 1fr;
+  padding: 0.5rem;
+  margin-inline: auto;
+
+}
+
+button {
+  background-color: var(--bg-300);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  box-shadow: 0 0 0.15rem var(--shadow);
 }
 
 .Canvas-Container {
