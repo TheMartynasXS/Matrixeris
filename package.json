@@ -1,0 +1,51 @@
+{
+  "name": "matrixeris",
+  "productName": "matrixeris",
+  "version": "1.0.0",
+  "description": "matricas daro",
+  "main": "src/main_process.js",
+  "build": {
+    "appId": "com.martynasXS.Matrixeris",
+    "win": {
+      "target": [
+        "portable"
+      ]
+    },
+    "nsis": {
+      "artifactName": "${name}-${version}-setup.${ext}",
+      "oneClick": false,
+      "perMachine": false,
+      "runAfterFinish": false,
+      "deleteAppDataOnUninstall": true,
+      "allowToChangeInstallationDirectory": true
+    },
+    "portable": {
+      "artifactName": "${name}-${version}-portable.${ext}"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "DevMarcius",
+        "repo": "Matrixeris"
+      }
+    ]
+  },
+  "scripts": {
+    "dev": "electron .",
+    "package": "electron-forge package",
+    "build": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always"
+  },
+  "keywords": [],
+  "author": {
+    "name": "DevMarcius"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.148.0"
+  },
+  "devDependencies": {
+    "electron": "15.2.0",
+    "electron-builder": "^22.11.7"
+  }
+}

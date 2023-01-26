@@ -1,0 +1,123 @@
+:root {
+  --pad: 0.2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #ffc24f;
+    --accent-success: #7BBA9C;
+    --accent-failure: #ff4f7b;
+
+    --text-primary: #ececec;
+    --text-secondary: #e7f3f5;
+
+    --bg-100: #484950;
+    --bg-200: #3a3b41;
+    --bg-300: #303136;
+    --shadow: #000000AA;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --accent: var(--text-primary);
+    --accent-success: #7BBA9C;
+    --accent-failure: #ff4f7b;
+
+    --text-primary: #06061c;
+    --text-secondary: #636975;
+
+    --bg-100: #ffffff;
+    --bg-200: #f2f3f5;
+    --bg-300: #d1d5d9;
+    --shadow: #00000040;
+  }
+}
+
+body {
+  background-color: var(--bg-200);
+  margin: 0;
+  display: grid;
+  height: 100vh;
+}
+
+.Buttons {
+  display: grid;
+  place-items: center;
+}
+
+canvas {
+  border-radius: 1rem;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 0 0 0.15rem var(--shadow);
+}
+
+.Matrix {
+  height: 120px;
+  width: 120px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  place-items: center;
+  border-radius: 1.15rem;
+}
+
+.Matrixes {
+  padding-block: 0.5rem;
+  display: grid;
+  filter:drop-shadow(0 0 0.15rem var(--shadow));
+  grid-template-columns: 1fr 0.5rem 1fr 0.5rem 1fr 0.5rem 1fr 0.5rem 1fr;
+  place-items: center;
+}
+.correct {
+  outline: 2px solid var(--accent-success);
+}
+.incorrect {
+  outline: 2px solid var(--accent-failure);
+}
+
+.Matrix>input:focus {
+  outline: none;
+}
+.Matrix>input {
+  box-sizing: border-box;
+  min-width: 1px;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  color: var(--text-primary);
+  background-color: var(--bg-300);
+  border-radius: 100%;
+  border:none;
+}
+
+.simbols {
+  color: var(--accent);
+  padding: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+  display: grid;
+  place-items: center;
+}
+
+.Matrix>input:disabled {
+  color: var(--text-secondary);
+  background-color: var(--bg-100);
+  border:none;
+
+}
+
+.Canvas-Container {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  place-items: center;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
